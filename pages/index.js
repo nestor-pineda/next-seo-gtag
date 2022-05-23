@@ -1,17 +1,21 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import * as gtag from "../lib/gtag";
 
 export default function Home() {
+  const myclickHandler = () => {
+    gtag.event({
+      action: "this_is_a_click",
+      category: "home_clicks",
+      label: "one link clicked",
+      value: "testing",
+    });
+  };
+
   return (
     <div>
-      <h1>Hello World</h1>
-      <Link href="/about">
+      <Link href="/about" onClick={() => myclickHandler()}>
         <a>Test one</a>
-      </Link>
-      <Link href="/contact">
-        <a>Test two</a>
       </Link>
     </div>
   );
