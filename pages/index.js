@@ -37,7 +37,12 @@ export default function Home() {
       </Head>
       <div>
         <Link href="/about" onClick={() => nextClickedHandler()}>
-          <a>Test one</a>
+          <a>about</a>
+        </Link>
+      </div>
+      <div>
+        <Link href="/contact" onClick={() => nextClickedHandler()}>
+          <a>contact</a>
         </Link>
       </div>
     </>

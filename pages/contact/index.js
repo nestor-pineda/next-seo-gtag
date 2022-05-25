@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import * as gtag from "../../lib/gtag";
 
 const Contact = () => {
