@@ -8,6 +8,7 @@ const Contact = () => {
   const search = () => {
     gtag.event({
       action: "search",
+      category: "search category",
       // params: {
       //   search_term: query,
       // },
@@ -17,6 +18,7 @@ const Contact = () => {
   const myAlert = () => {
     gtag.event({
       action: "myAlerttt",
+      category: "alert category",
     });
     alert(`This is an alert for GA`);
   };
@@ -36,7 +38,7 @@ const Contact = () => {
         </div>
         <div>
           <button onClick={() => search()}>Search</button>
-          <button onClick={() => myAlert()}></button>
+          <button onClick={() => myAlert()}>alert here</button>
         </div>
       </div>
     </>
