@@ -1,5 +1,18 @@
 import Head from "next/head";
+import * as gtag from "../../lib/gtag";
+
 const Contact = () => {
+  const [query, setQuery] = useState("");
+
+  const search = () => {
+    gtag.event({
+      action: "search",
+      params: {
+        search_term: query,
+      },
+    });
+  };
+
   return (
     <>
       <Head>
@@ -8,6 +21,15 @@ const Contact = () => {
       </Head>
 
       <h1>This is ths Contact page</h1>
+
+      <div>
+        <div>
+          <input type="text" onChange={(event) => setQuery(event.target.value)}></input>
+        </div>
+        <div>
+          <button onClick={() => search()}>Search</button>
+        </div>
+      </div>
     </>
   );
 };

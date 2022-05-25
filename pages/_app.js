@@ -14,18 +14,17 @@ const App = ({ Component, pageProps }) => {
     //When the component is mounted, subscribe to router changes
     //and log those page views
     router.events.on("routeChangeComplete", handleRouteChange);
-    router.events.on("hashChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
     return () => {
-      // If the component is unmounted, unsubscribe
-      // from the event with the `off` method
       router.events.off("routeChangeComplete", handleRouteChange);
-      router.events.off("hashChangeComplete", handleRouteChange);
     };
   }, [router.events]);
 
   return (
     <>
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
+      {/*  <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -39,7 +38,7 @@ const App = ({ Component, pageProps }) => {
             });
           `,
         }}
-      />
+      /> */}
 
       <Head>
         <meta charset="UTF-8" />
