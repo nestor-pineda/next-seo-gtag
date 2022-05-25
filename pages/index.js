@@ -30,10 +30,16 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <Link href="/about" onClick={() => nextClickedHandler()}>
-        <a>Test one</a>
-      </Link>
-    </div>
+    <>
+      <Head>
+        <title>Home - This is the home</title>
+        <meta name="description" content="Meta description for the Home page" />
+      </Head>
+      <div>
+        <Link href="/about" onClick={() => nextClickedHandler()}>
+          <a>Test one</a>
+        </Link>
+      </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import Script from "next/script";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import Layout from "../Components/Layout";
+import Head from "next/head";
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -24,8 +25,7 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
+      {/* <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -39,7 +39,15 @@ const App = ({ Component, pageProps }) => {
             });
           `,
         }}
-      />
+      /> */}
+
+      <Head>
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="titla, meta, nextjs" />
+        <meta name="author" content="Syamlal CM" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
       <Layout>
         <Component {...pageProps} />
       </Layout>
