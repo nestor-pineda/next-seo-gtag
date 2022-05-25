@@ -9,6 +9,8 @@ const Contact = () => {
     gtag.event({
       action: "search",
       category: "search category",
+      label: "this is a alert lable",
+      value: "another aler",
       // params: {
       //   search_term: query,
       // },
@@ -19,6 +21,8 @@ const Contact = () => {
     gtag.event({
       action: "myAlerttt",
       category: "alert category",
+      label: "this is a alert lable",
+      value: "another aler",
     });
     alert(`This is an alert for GA`);
   };
