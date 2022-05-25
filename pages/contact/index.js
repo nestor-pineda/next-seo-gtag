@@ -8,10 +8,17 @@ const Contact = () => {
   const search = () => {
     gtag.event({
       action: "search",
-      params: {
-        search_term: query,
-      },
+      // params: {
+      //   search_term: query,
+      // },
     });
+  };
+
+  const myAlert = () => {
+    gtag.event({
+      action: "myAlerttt",
+    });
+    alert(`This is an alert for GA`);
   };
 
   return (
@@ -29,6 +36,7 @@ const Contact = () => {
         </div>
         <div>
           <button onClick={() => search()}>Search</button>
+          <button onClick={() => myAlert()}></button>
         </div>
       </div>
     </>
